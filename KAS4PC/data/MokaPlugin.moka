@@ -1,0 +1,105 @@
+//--------------------------------------------------------------------------
+//    MokaPlugin.moka
+//    Copyright (C) 2012 スタジオ蜜柑
+//    This file is licensed under zlib/libpng License.
+//
+//    KAS プラグインのひな形です。
+//    This is model for KAS Plugin.
+//--------------------------------------------------------------------------
+
+
+if(moka_plugin_sample !== void) return;
+
+//println("Add Moka Plugin.");
+
+//
+// プラグインは辞書配列によって定義します。
+// 辞書配列に各関数を定義すると、状況に応じて関数が呼ばれます。
+//
+// 全ての関数は引数 self を持ちます。self にはこの辞書配列自身が
+// 与えられます。
+//
+var plugin = %[
+	
+	// プラグインの名前。
+	name : "stationery",
+	
+	// タグとして呼ぶ時の名前。
+	// null を指定するとタグとしては登録されない。
+	tagname : null,
+	
+	// セーブデータを保存する時に呼ばれる
+	// data 保存先辞書配列 この辞書配列に追加した値が保存される
+	onStore : function(self, data)
+	{
+	},
+	
+	// セーブデータを読み込む時に呼ばれる
+	// data セーブデータの辞書配列
+	// clear メッセージレイヤをクリアするかどうか（tmpload 時のみ false）
+	// toback 裏画面へのロードかどうか
+	onRestore : function(self, data, clear, toback)
+	{
+	},
+	
+	// 安定（s l p タグで停止中）から走行へ、あるいはその逆に
+	// 状態が変化したときに呼ばれる
+	onStableStateChanged : function(self, stable)
+	{
+	},
+	
+	// メッセージレイヤが隠された、あるいは復帰した時に呼ばれる
+	// hidden 隠される時に true、表示される時に false
+	onMessageHiddenStateChanged : function(self, hidden)
+	{
+	},
+	
+	// レイヤ情報のコピーが行われる時に呼ばれる
+	// toback 表から裏へのコピーなら true、逆なら false
+	onCopyLayer : function(self, toback)
+	{
+	},
+	
+	// オートモードが開始又は終了した直後に呼ばれる
+	// start 開始時は true、 終了時は false
+	onAutoMode : function(self, start)
+	{
+	},
+	
+	// スキップモードが開始又は終了した直後に呼ばれる
+	//  start 開始時は true、終了時は false
+	onSkipMode : function(self, start)
+	{
+	},
+	
+	// トランジションなどで表画面と裏画面が入れ替わった後に呼ばれる
+	onExchangeForeBack : function(self)
+	{
+	},
+	
+	// タッチイベント
+	// true を返すと、何か処理が行われたと判断され、
+	// 他のタッチイベントの動作を無視する。
+	// x タッチされた座標
+	// y タッチされた座標
+	// action イベントの酒類 0:down 1:up 2:move
+	onTouchEvent : function(self, x, y, action)
+	{
+		return false;
+	},
+	
+	// タグとして動作する時に呼ばれる。
+	// elm 属性
+	run : function(self, elm)
+	{
+		println(elm);
+	},
+];
+
+// 追加する
+addPlugin(plugin);
+
+// 多重読み込み防止のために記憶しておく。
+// 変数の名前はユニークなものである必要がある。
+var moka_plugin_sample = plugin;
+

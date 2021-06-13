@@ -1,0 +1,232 @@
+
+
+
+if(__guard__MokaLayer__ !== void) return;
+
+function newMokaLayer()
+{
+var packagename = getKasPackageName();
+var layer_object = newjobj(packagename + ".Layer");
+
+var dic = %[
+	
+	obj : layer_object,
+	
+	loadImage : function(self, filename)
+	{
+		return jmethod(self.obj, "loadImage", [filename]);
+	},
+	
+	freeImage: function(self)
+	{
+		jmethod(self.obj, "freeImage");
+	},
+	
+	loadAdditionalImage : function(self, filename, dx, dy, sx, sy, sw, sh, opacity)
+	{
+		var jdx = jint(dx);
+		var jdy = jint(dy);
+		var jsx = jint(sx);
+		var jsy = jint(sy);
+		var jsw = jint(sw);
+		var jsh = jint(jsh);
+		var jopacity = jint(opacity);
+		jmethod(self.obj, "loadAdditionalImage", 
+			[filename, jdx, jdy, jsx, jsy, jsw, jsh, jopacity],
+			["java.lang.String", "int", "int", "int", "int", "int", "int", "int"]);
+	},
+	
+	freeAdditionalImage : function(self)
+	{
+		jmethod(self.obj, "freeAdditionalImage");
+	},
+	
+	loadAnimationFile : function(self, filename)
+	{
+		jmethod(self.obj, "loadAnimationFile", [filename], ["java.lang.String"]);
+	},
+	
+	startAnimation : function(self, loop)
+	{
+		var nowTime = getConductTime();
+		jmethod(self.obj, "startAnimation", [nowTime, loop], ["long", "boolean"]);
+	},
+	
+	stopAnimation : function(self)
+	{
+		jmethod(self.obj, "stopAnimation");
+	},
+	
+	isStopedAnimation : function(self)
+	{
+		return jmethod(self.obj, "isStopedAnimation");
+	},
+	
+	isLoopAnimation : function(self)
+	{
+		return jmethod(self.obj, "isLoopAnimation");
+	},
+	
+	copyLayer : function(self, layer)
+	{
+		var context = getContext();
+		var nowTime = getConductTime();
+		jmethod(self.obj, "copyLayer", [context, layer, nowTime]);
+	},
+	
+
+
+	setIndex : function(self, index)
+	{
+		var jindex = jint(index);
+		setjfield(self.obj, "index", jindex);
+	},
+
+	setVisible : function(self, visible)
+	{
+		jmethod(self.obj, "setVisible", [visible], ["boolean"]);
+	},
+	
+	setPos : function(self, x, y)
+	{
+		var jx = jint(x);
+		var jy = jint(y);
+		jmethod(self.obj, "setPos", [jx, jy], ["int", "int"]);
+	},
+	
+	setX : function(self, x)
+	{
+		var jx = jint(x);
+		jmethod(self.obj, "setX", [jx], ["int"]);
+	},
+	
+	setY : function(self, y)
+	{
+		var jy = jint(y);
+		jmethod(self.obj, "setY", [jy], ["int"]);
+	},
+	
+	setSize : function(self, width, height)
+	{
+		var jwidth = jint(width);
+		var jheight = jint(height);
+		jmethod(self.obj, "setSize", [jwidth, jheight], ["int", "int"]);
+	},
+	
+	setWidth : function(self, width)
+	{
+		var jwidth = jint(width);
+		jmethod(self.obj, "setWidth", [jwidth], ["int"]);
+	},
+	
+	setHeight : function(self, height)
+	{
+		var jheight = jint(height);
+		jmethod(self.obj, "setHeight", [jheight], ["int"]);
+	},
+	
+	setOpacity : function(self, opacity)
+	{
+		var jo = jint(opacity);
+		jmethod(self.obj, "setOpacity", [jo], ["int"]);
+	},
+	
+	setPosByString : function(self, pos)
+	{
+		jmethod(self.obj, "setPosByString", [pos]);
+	},
+	
+	setImagePos : function(self, x, y)
+	{
+		var jx = jint(x);
+		var jy = jint(y);
+		jmethod(self.obj, "setImagePos", [jx, jy], ["int", "int"]);
+	},
+	
+	setImageX : function(self, x)
+	{
+		var jx = jint(x);
+		jmethod(self.obj, "setImageX", [jx], ["int"]);
+	},
+	
+	setImageY : function(self, y)
+	{
+		var jy = jint(y);
+		jmethod(self.obj, "setImageY", [jy], ["int"]);
+	},
+		
+	getX : function(self)
+	{
+		return jmethod(self.obj, "getX");
+	},
+	
+	getY : function(self)
+	{
+		return jmethod(self.obj, "getY");
+	},
+	
+	getWidth : function(self)
+	{
+		return jmethod(self.obj, "getWidth");
+	},
+	
+	getHeight : function(self)
+	{
+		return jmethod(self.obj, "getHeight");
+	},
+	
+	getOpacity : function(self)
+	{
+		return jmethod(self.obj, "getOpacity");
+	},
+	
+	getVisible : function(self)
+	{
+		return jmethod(self.obj, "getVisible");
+	},
+	
+	getFileName : function(self)
+	{
+		return jmethod(self.obj, "getFileName");
+	},
+	
+	getImageX : function(self)
+	{
+		return jmethod(self.obj, "getImageX");
+	},
+	
+	getImageY : function(self)
+	{
+		return jmethod(self.obj, "getImageY");
+	},
+	
+	getImageWidth : function(self)
+	{
+		return jmethod(self.obj, "getImageWidth");
+	},
+
+	getImageHeight : function(self)
+	{
+		return jmethod(self.obj, "getImageHeight");
+	},
+
+	toString : function(self)
+	{
+		return jmethod(self.obj, "toString");
+	},
+
+];
+
+return dic;
+
+}
+
+function addMokaLayer(fore, back)
+{
+	addLayer(fore.obj, back.obj);
+}
+
+var __guard__MokaLayer__ = true;
+
+return %[newMokaLayer:newMokaLayer, addMokaLayer:addMokaLayer];
+
