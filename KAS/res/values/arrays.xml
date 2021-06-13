@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string-array name="list_textInterval">
+        <item>0.ノーウェイト</item>
+        <item>1.高速</item>
+        <item>2.普通</item>
+        <item>3.低速</item>
+        <item>4.超低速</item>
+    </string-array>
+    <string-array name="list_textIntervalValue">
+        <item>0</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
+
+    <string-array name="list_autoModeSpeed">
+        <item>0（高速）</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5（普通）</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10（低速）</item>
+    </string-array>
+    <string-array name="list_autoModeSpeedValue">
+        <item>0</item>
+        <item>200</item>
+        <item>400</item>
+        <item>600</item>
+        <item>800</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>1400</item>
+        <item>1600</item>
+        <item>1800</item>
+        <item>2000</item>
+    </string-array>
+
+    <string-array name="list_bgm">
+        <item>0 ％</item>
+        <item>10 ％</item>
+        <item>20 ％</item>
+        <item>30 ％</item>
+        <item>40 ％</item>
+        <item>50 ％</item>
+        <item>60 ％</item>
+        <item>70 ％</item>
+        <item>80 ％</item>
+        <item>90 ％</item>
+        <item>100 ％</item>
+    </string-array>
+    <string-array name="list_bgmValue">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="list_se">
+        <item>0 ％</item>
+        <item>10 ％</item>
+        <item>20 ％</item>
+        <item>30 ％</item>
+        <item>40 ％</item>
+        <item>50 ％</item>
+        <item>60 ％</item>
+        <item>70 ％</item>
+        <item>80 ％</item>
+        <item>90 ％</item>
+        <item>100 ％</item>
+    </string-array>
+    <string-array name="list_seValue">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="list_graphicScale">
+        <item>悪い</item>
+        <item>やや悪い</item>
+        <item>普通</item>
+        <item>最高画質</item>
+    </string-array>
+    <string-array name="list_graphicScaleValue">
+        <item>0.5</item>
+        <item>0.7</item>
+        <item>0.8</item>
+        <item>1.0</item>
+    </string-array>
+
+</resources>

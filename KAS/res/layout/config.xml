@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory android:title="テキスト設定">
+		<ListPreference
+			android:key="key_textInterval"
+			android:title="文字表示速度"
+			android:summary="文章の表示速度を設定します"
+			android:dialogTitle="文字表示速度"
+			android:entries="@array/list_textInterval"
+			android:entryValues="@array/list_textIntervalValue"
+			/>
+		<ListPreference
+			android:key="key_autoModeSpeed"
+			android:title="オートモード速度"
+			android:summary="自動で読み進める速度を設定します"
+			android:dialogTitle="オートモード速度"
+			android:entries="@array/list_autoModeSpeed"
+			android:entryValues="@array/list_autoModeSpeedValue"
+			/>
+		<CheckBoxPreference
+			android:key="key_allSkip"
+			android:title="全文スキップ"
+			android:summary="オンにすると未読文章でもスキップを停止しません"
+			/>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="サウンド設定">
+		<ListPreference
+			android:key="key_bgm"
+			android:title="BGM音量"
+			android:summary="BGMの音量を設定します"
+			android:dialogTitle="BGM音量"
+			android:entries="@array/list_bgm"
+			android:entryValues="@array/list_bgmValue"
+			/>
+		<ListPreference
+			android:key="key_se"
+			android:title="SE音量"
+			android:summary="SE（効果音）の音量を設定します"
+			android:dialogTitle="SE音量"
+			android:entries="@array/list_se"
+			android:entryValues="@array/list_seValue"
+			/>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="システム設定">
+		<CheckBoxPreference
+			android:key="key_fullscreen"
+			android:title="フルスクリーン表示"
+			android:summary="画面をフルスクリーンで表示します"
+			/>
+		<ListPreference
+			android:key="key_graphicScale"
+			android:title="画質"
+			android:summary="画質を設定します\n画質を落とすと処理が高速になり、メモリ使用量も少なくなります\n※再起動後に有効"
+			android:dialogTitle="画質"
+			android:entries="@array/list_graphicScale"
+			android:entryValues="@array/list_graphicScaleValue"
+			/>
+		<CheckBoxPreference
+			android:key="key_direction"
+			android:title="演出を簡易にする"
+			android:summary="チェックすると一部の演出が簡易（軽量）版になります\n動作が重いときはチェックを入れてください"
+			/>
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="インフォメーション">
+		<PreferenceScreen android:title="バージョン情報"
+			android:key="versioninfo_key"
+			android:summary="version unknown">
+		</PreferenceScreen>
+		<PreferenceScreen android:title="システム情報"
+			android:key="systeminfo_key"
+			android:summary="KAS version unknown">
+		</PreferenceScreen>
+	</PreferenceCategory>
+
+</PreferenceScreen>
